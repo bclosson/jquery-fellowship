@@ -136,7 +136,24 @@ $('.hobbit')[0].append($ring);
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
+const $baddy = $('<ul class="bad-guys"></ul>');
+$('.mordor').append($baddy);
 
+for (let i = 0; i < baddies.length; i++) {
+  if (baddies[i] === baddies[0]) {
+    const $sauron = $('<li class="baddy">Sauron</li>');
+    $('#mordor').append($sauron);
+  }else if (baddies[i] === baddies[1]) {
+    const $saruman = $('<li class="baddy">Saruman</li>');
+    $('#mordor').append($saruman);
+  }else if (baddies[i] === baddies[2]) {
+    const $urukHai = $('<li class="baddies">The Uruk-hai</li>');
+    $('#mordor').append($urukHai);
+  }else if (baddies[i] === baddies[3]) {
+    const $orcs = $('<li class="baddies">Orcs</li>');
+    $('#mordor').append($orcs);
+  }
+}
   // 2. give each of the baddies a class of "baddy"
 
   // 3. remember to append them to Mordor
