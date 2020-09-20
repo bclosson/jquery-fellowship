@@ -53,13 +53,13 @@ const makeMiddleEarth = () => {
   // 3. use a for loop to iterate over the lands array that does the following:
 for (let i = 0; i < lands.length; i++) {
   if (lands[i] === lands[0]){
-    const $shire = $('<article> id="The-Shire"><h1>The Shire</h1></article>');
+    const $shire = $('<article id="the-shire"><h1>The Shire</h1></article>');
     $('section').append($shire);
   }else if (lands[i] === lands[1]) {
-    const $rivendell = $('<article id="Rivendell"><h1>Rivendell</h1></article>');
+    const $rivendell = $('<article id="rivendell"><h1>Rivendell</h1></article>');
     $('section').append($rivendell);
   }else if (lands[i] === lands[2]) {
-    const $mordor = $('<article id="Mordor"><h1>Mordor</h1></article>');
+    const $mordor = $('<article id="mordor"><h1>Mordor</h1></article>');
     $('section').append($mordor);
   }
 }
@@ -84,9 +84,24 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
-
+const $hobbits = $('<ul id="shire-folk"></ul');
+$('#the-shire').append($hobbits);
   // 2. give each hobbit a class of "hobbit"
-
+for (let i = 0; i < hobbits.length; i++) {
+  if (hobbits[i] === hobbits[0]) {
+    const $frodo = $('<li class="hobbit">Frodo Baggins</li>');
+    $('#shire-folk').append($frodo);
+  }else if (hobbits[i] === hobbits[1]) {
+    const $sam = $('<li class="hobbit">Samwise "Sam" Gamgee</li>');
+    $('#shire-folk').append($sam);
+  }else if (hobbits[i] === hobbits[2]) {
+    const $merry = $('<li class="hobbit">Merindoc "Mary" Brandybuck</li>');
+    $('#shire-folk').append($merry);
+  }else if (hobbits[i] === hobbits[3]) {
+    const $pippin = ('<li class="hobbit">Peregrin "Pippin" Took</li>');
+    $('#shire-folk').append($pippin);
+  }
+}
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
