@@ -168,9 +168,28 @@ for (let i = 0; i < baddies.length; i++) {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
-
+const $buddy = $('<aside id="buddy"></aside>');
+$('#middle-earth').append($buddy);
   // 2. display an unordered list of buddies in the aside
-
+const $buddies = $('<ul></ul>');
+for (let i = 0; i < buddies.length; i++) {
+  if (buddies[i] === buddies[0]) {
+    const $gandolf = $('<li class="buddy">Gandolf the Grey</li>');
+    $('#buddy').append($gandolf);
+  }else if (buddies[i] === buddies[1]) {
+    const $legolas = $('<li class="buddy">Legolas</li>');
+    $('#buddy').append($legolas);
+  }else if (buddies[i] === buddies[2]) {
+    const $gimli = $('<li class="buddy">Gimli</li>');
+    $('#buddy').append($gimli);
+  }else if (buddies[i] === buddies[3]) {
+    const $strider = $('<li class="buddy">Strider</li>');
+    $('#buddy').append($strider);
+  }else if (buddies[i] === buddies[4]) {
+    const $boromir = $('<li class="buddy">Boromir</li>');
+    $('#buddy').append($boromir);
+  }
+}
   // 3. give each of the buddies a class of "buddy"
 
 };
