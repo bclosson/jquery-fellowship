@@ -117,10 +117,10 @@ for (let i = 0; i < hobbits.length; i++) {
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
-const $ring = ('<div id="the-ring"></div>');
-$('.hobbit')[0].append($ring);
+const $ring = $('<div id="the-ring"></div>');
+
   // 2. add the ring as a child of Frodo
-// $('.hobbits(0)').append($ring);
+$('.hobbit')[0].append($ring);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
@@ -203,9 +203,10 @@ for (let i = 0; i < buddies.length; i++) {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-
+const $leaveShire = $('#the-shire').children('ul').contents();
+$('#rivendell').append($leaveShire);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
-
+ 
 };
 
 // COMMIT YOUR WORK
