@@ -120,7 +120,7 @@ const keepItSecretKeepItSafe = () => {
 const $ring = $('<div id="the-ring"></div>');
 
   // 2. add the ring as a child of Frodo
-$('.hobbit')[0].append($ring);
+$('#the-shire #shire-folk').children().eq(0).append($ring);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
@@ -205,8 +205,9 @@ for (let i = 0; i < buddies.length; i++) {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-const $leaveShire = $('#the-shire').children().contents();
+const $leaveShire = $('#shire-folk');
 $('#rivendell').append($leaveShire);
+
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
   // console.log($('#the-shire').children().contents());
 };
@@ -234,12 +235,17 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
+  const $fellowship = $('<div id="the-fellowship"><h1>The Fellowship</h1></div>');
+  
 
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  
   // 3. append the fellowship to middle-earth
-
+  $('#middle-earth').append($fellowship);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  const $hobbits = $('#rivendell #shire-folk');
+  const $buddies = $('aside .buddies');
+  $('#the-fellowship').append($hobbits, $buddies);
 
 };
 
