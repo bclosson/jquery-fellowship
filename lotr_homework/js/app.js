@@ -168,26 +168,28 @@ for (let i = 0; i < baddies.length; i++) {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
-const $buddy = $('<aside id="buddy"></aside>');
+const $buddy = $('<aside></aside>');
 $('#middle-earth').append($buddy);
   // 2. display an unordered list of buddies in the aside
-const $buddies = $('<ul></ul>');
+const $buddies = $('<ul class="buddies"></ul>');
+$('aside').append($buddies);
+
 for (let i = 0; i < buddies.length; i++) {
   if (buddies[i] === buddies[0]) {
-    const $gandolf = $('<li class="buddy">Gandolf the Grey</li>');
-    $('#buddy').append($gandolf);
+    const $gandolf = $('<li>Gandolf the Grey</li>');
+    $('.buddies').append($gandolf);
   }else if (buddies[i] === buddies[1]) {
-    const $legolas = $('<li class="buddy">Legolas</li>');
-    $('#buddy').append($legolas);
+    const $legolas = $('<li>Legolas</li>');
+    $('.buddies').append($legolas);
   }else if (buddies[i] === buddies[2]) {
-    const $gimli = $('<li class="buddy">Gimli</li>');
-    $('#buddy').append($gimli);
+    const $gimli = $('<li>Gimli</li>');
+    $('.buddies').append($gimli);
   }else if (buddies[i] === buddies[3]) {
-    const $strider = $('<li class="buddy">Strider</li>');
-    $('#buddy').append($strider);
+    const $strider = $('<li>Strider</li>');
+    $('.buddies').append($strider);
   }else if (buddies[i] === buddies[4]) {
-    const $boromir = $('<li class="buddy">Boromir</li>');
-    $('#buddy').append($boromir);
+    const $boromir = $('<li>Boromir</li>');
+    $('.buddies').append($boromir);
   }
 }
   // 3. give each of the buddies a class of "buddy"
@@ -203,10 +205,10 @@ for (let i = 0; i < buddies.length; i++) {
 const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-const $leaveShire = $('#the-shire').children('ul').contents();
+const $leaveShire = $('#the-shire').children().contents();
 $('#rivendell').append($leaveShire);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
- 
+  // console.log($('#the-shire').children().contents());
 };
 
 // COMMIT YOUR WORK
@@ -218,11 +220,11 @@ $('#rivendell').append($leaveShire);
 const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
-
+ 
+  const point = $('aside .buddies').children().eq(3).text('Aragorn');
+  
   // hint: You can get a list of elements by tag name, such as 'aside'
-
 };
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
 
