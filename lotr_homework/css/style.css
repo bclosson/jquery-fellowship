@@ -160,6 +160,11 @@ aside ul {
   width: 20%;
 }
 
+.the-white {
+  background-color: white;
+  border-width: 20px;
+  border-color: grey;
+}
 
 
 /*===========================================================*/
