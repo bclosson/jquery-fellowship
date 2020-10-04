@@ -281,7 +281,7 @@ const hornOfGondor = () => {
     
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
     const $uruk = $('#mordor').contents().eq(4).remove();
-    console.log($uruk);
+    
 };
 
 // COMMIT YOUR WORK
@@ -293,9 +293,13 @@ const hornOfGondor = () => {
 const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-
+    const $froDo = $('#the-fellowship').contents().eq(1).children().eq(0);
+    const $samWi = $('#the-fellowship').contents().eq(1).children().eq(1);
+  
+    $('#mordor').append($froDo, $samWi);
   // 2. add a div with an id of 'mount-doom' to Mordor
-
+    const $doom = $('<div id="mount-doom"></div>');
+    $('#mordor').append($doom);
 };
 
 // COMMIT YOUR WORK
