@@ -137,7 +137,7 @@ const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
 const $baddy = $('<ul class="bad-guys"></ul>');
-$('.mordor').append($baddy);
+$('#mordor').append($baddy);
 
 for (let i = 0; i < baddies.length; i++) {
   if (baddies[i] === baddies[0]) {
@@ -147,10 +147,10 @@ for (let i = 0; i < baddies.length; i++) {
     const $saruman = $('<li class="baddy">Saruman</li>');
     $('#mordor').append($saruman);
   }else if (baddies[i] === baddies[2]) {
-    const $urukHai = $('<li class="baddies">The Uruk-hai</li>');
+    const $urukHai = $('<li class="baddy">The Uruk-hai</li>');
     $('#mordor').append($urukHai);
   }else if (baddies[i] === baddies[3]) {
-    const $orcs = $('<li class="baddies">Orcs</li>');
+    const $orcs = $('<li class="baddy">Orcs</li>');
     $('#mordor').append($orcs);
   }
 }
@@ -275,11 +275,13 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
-
+    alert('The Horn of Gondor has been Blown!')
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+    const $boromir = $('.buddies').children().eq(4).css('text-decoration', 'line-through');
+    
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+    const $uruk = $('#mordor').contents().eq(4).remove();
+    console.log($uruk);
 };
 
 // COMMIT YOUR WORK
